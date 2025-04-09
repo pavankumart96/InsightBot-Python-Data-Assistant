@@ -1,0 +1,71 @@
+InsightBot Summary Report
+========================================
+
+Dataset Info:
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 11 columns):
+ #   Column          Non-Null Count  Dtype         
+---  ------          --------------  -----         
+ 0   Patient ID      1000 non-null   object        
+ 1   Gender          1000 non-null   object        
+ 2   Age             1000 non-null   int64         
+ 3   City            1000 non-null   object        
+ 4   Department      1000 non-null   object        
+ 5   Diagnosis       1000 non-null   object        
+ 6   Admission Date  1000 non-null   datetime64[ns]
+ 7   Discharge Date  1000 non-null   datetime64[ns]
+ 8   Treatment Cost  1000 non-null   float64       
+ 9   Insurance       670 non-null    object        
+ 10  Length of Stay  1000 non-null   int64         
+dtypes: datetime64[ns](2), float64(1), int64(2), object(6)
+memory usage: 86.1+ KB
+
+Missing Values:
+Patient ID          0
+Gender              0
+Age                 0
+City                0
+Department          0
+Diagnosis           0
+Admission Date      0
+Discharge Date      0
+Treatment Cost      0
+Insurance         330
+Length of Stay      0
+dtype: int64
+
+Column Data Types:
+Patient ID                object
+Gender                    object
+Age                        int64
+City                      object
+Department                object
+Diagnosis                 object
+Admission Date    datetime64[ns]
+Discharge Date    datetime64[ns]
+Treatment Cost           float64
+Insurance                 object
+Length of Stay             int64
+dtype: object
+
+Summary Statistics:
+               Age                 Admission Date                 Discharge Date  Treatment Cost  Length of Stay
+count  1000.000000                           1000                           1000      1000.00000     1000.000000
+mean     43.982000  2022-07-06 23:51:21.599999744  2022-07-13 10:42:14.399999744     10081.22294        6.452000
+min       1.000000            2022-01-01 00:00:00            2022-01-06 00:00:00       500.60000        3.000000
+25%      22.000000            2022-04-11 00:00:00            2022-04-17 00:00:00      5220.10500        4.000000
+50%      43.000000            2022-07-09 00:00:00            2022-07-15 00:00:00      9999.92500        6.000000
+75%      65.250000            2022-10-04 00:00:00            2022-10-09 06:00:00     14826.89250        8.000000
+max      89.000000            2022-12-31 00:00:00            2023-01-08 00:00:00     19956.11000       10.000000
+std      25.655562                            NaN                            NaN      5569.30580        2.294114
+
+Potential ML Targets:
+- Column 'Gender' → Classification target (3 categories)
+- Column 'Age' looks continuous → Regression target
+- Column 'City' → Classification target (5 categories)
+- Column 'Department' → Classification target (6 categories)
+- Column 'Diagnosis' → Classification target (7 categories)
+- Column 'Treatment Cost' looks continuous → Regression target
+- Column 'Insurance' → Classification target (2 categories)
+- Column 'Length of Stay' (numeric) may be categorical → Classification
